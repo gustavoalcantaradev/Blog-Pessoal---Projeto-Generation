@@ -1,4 +1,4 @@
-package com.generation.blogpessoal.model;
+﻿package com.generation.blogpessoal.model;
 
 import java.util.List;
 
@@ -44,6 +44,18 @@ public class Usuario {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
+	
+	//Metodos contrutores
+	
+	public Usuario(Long id, String nome, String usuario, String senha, String foto) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+	}
+	
+	public Usuario() { }
 
 	/* Insira os Getters and Setters */
 
