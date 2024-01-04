@@ -16,27 +16,24 @@ import io.swagger.v3.oas.models.responses.ApiResponses;
 public class SwaggerConfig {
 
 	@Bean
-    OpenAPI springBlogPessoalOpenAPI() {
-        return new OpenAPI()
-            .info(new Info()
-                .title("Projeto Blog Pessoal")
-                .description("Projeto Blog Pessoal - Generation Brasil")
-                .version("v0.0.1")
-                .license(new License()
-                    .name("Gustavo Alcantara")
-                    .url("linkedin.com/in/gustavoalcantaradejesus/"))
-                .contact(new Contact()
-                    .name("Gustavo Alcantara")
-                    .url("https://github.com/gustavoalcantaradev")
-                    .email("gustavoalcantara.dev@outlook.com")))
-            .externalDocs(new ExternalDocumentation()
-                .description("Github")
-                .url("https://github.com/gustavoalcantaradev/Blog-Pessoal---Projeto-Generation"));
-    }
-
+	OpenAPI springBlogPessoalOpenAPI() {
+		return new OpenAPI()
+				.info(new Info().title("Projeto Blog Pessoal")
+						.description("Projeto Blog Pessoal - Generation Brasil")
+						.version("v0.0.1")
+						.license(new License()
+								.name("Bianca Akemi")
+								.url("https://github.com/BiaAkemi"))
+						.contact(new Contact()
+								.name("Bianca Akemi")
+								.url("https://www.linkedin.com/in/bianca-akemi/")
+								.email("beancaakemi@gmail.com")))
+				.externalDocs(new ExternalDocumentation().description("Github")
+						.url("https://github.com/BiaAkemi"));
+	}
 
 	@Bean
-	OpenApiCustomizer customerGlobalHeaderOpenApiCustomiser() {
+	public OpenApiCustomizer customerGlobalHeaderOpenApiCustomiser() {
 
 		return openApi -> {
 			openApi.getPaths().values().forEach(pathItem -> pathItem.readOperations().forEach(operation -> {
